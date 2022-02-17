@@ -44,6 +44,17 @@ function checkError({ data, error }) {
 // get items from supabase
 export async function fetchItems() {
     const resp = await client.from('shopping_list').select();
-    console.log('working', resp);
-    checkError(resp);
+    // console.log('working', resp);
+    return checkError(resp);
+}
+
+export async function createItem(item) {
+    const resp = await client.from('shopping_list').insert({ item });
+    // console.log('push', resp);
+    return checkError(resp);
+}
+export async function buyItem(id) {
+    const resp = await client.from('shopping_list').update({ got: true }).eq('id', id);
+
+    return checkError(resp);
 }
