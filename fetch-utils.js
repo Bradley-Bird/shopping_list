@@ -37,6 +37,13 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
-// function checkError({ data, error }) {
-//     return error ? console.error(error) : data;
-// }
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}
+
+// get items from supabase
+export async function fetchItems() {
+    const resp = await client.from('shopping_list').select();
+    console.log('working', resp);
+    checkError(resp);
+}
