@@ -43,7 +43,7 @@ function checkError({ data, error }) {
 
 // get items from supabase
 export async function fetchItems() {
-    const resp = await client.from('shopping_list').select();
+    const resp = await client.from('shopping_list').select().order('id');
     // console.log('working', resp);
     return checkError(resp);
 }
@@ -55,6 +55,12 @@ export async function createItem(item) {
 }
 export async function buyItem(id) {
     const resp = await client.from('shopping_list').update({ got: true }).eq('id', id);
+
+    return checkError(resp);
+}
+
+export async function deleteItems(id) {
+    const resp = await client.from('shopping_list').delete().match({ user_id: getUser().id });
 
     return checkError(resp);
 }

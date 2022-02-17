@@ -1,10 +1,11 @@
-import { checkAuth, logout, fetchItems, createItem, buyItem } from '../fetch-utils.js';
+import { checkAuth, logout, fetchItems, createItem, buyItem, deleteItems } from '../fetch-utils.js';
 import { renderItem } from '../render.utils.js';
 
 checkAuth();
 
 const logoutButton = document.getElementById('logout');
 const shoppingForm = document.getElementById('shopping-form');
+const deleteButton = document.querySelector('.delete-button');
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -34,5 +35,11 @@ shoppingForm.addEventListener('submit', async (e) => {
     await createItem(data.get('item'));
     // console.log('data', data);
     shoppingForm.reset();
+    renderItems();
+});
+
+deleteButton.addEventListener('click', async () => {
+    console.log('click');
+    deleteItems();
     renderItems();
 });
