@@ -40,6 +40,6 @@ shoppingForm.addEventListener('submit', async (e) => {
 
 deleteButton.addEventListener('click', async () => {
     console.log('click');
-    deleteItems();
+    await deleteItems();
     renderItems();
 });
