@@ -118,6 +118,7 @@ footer {
 
 .auth-container {
     margin: 10px;
+    color: white;
 }
 
 .auth-container form {
@@ -127,4 +128,8 @@ footer {
 
 .auth-container button {
     margin: 10px;
+}
+
+.auth-container input {
+    color: black;
 }
