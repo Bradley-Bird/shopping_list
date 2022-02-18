@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/398d810262.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
@@ -16,17 +17,26 @@
 <body>
     <header>
         <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
+            <h1 class="main-logo">Shopping-List</h1>
         </div>
-    </header>    
+    </header>
     <button id="logout">Logout</button>
     <main>
-        <h1>You are logged in!</h1>
+        <form id="shopping-form">
+            <label class="custom-field">
+                <input name="item" required>
+                <span class="placeholder">Enter Item</span>
+            </label>
+            <button class="add-button">Add Item</button>
+        </form>
+        <button class="delete-button">delete items</button>
+        <div class="items">
+        </div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
-    <script type="module" src="./other-page.js"></script>
+    <script type="module" src="./shopping-list.js"></script>
 </body>
 
 </html>
