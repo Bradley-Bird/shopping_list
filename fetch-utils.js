@@ -59,7 +59,7 @@ export async function buyItem(id) {
     return checkError(resp);
 }
 
-export async function deleteItems(id) {
+export async function deleteItems() {
     const resp = await client.from('shopping_list').delete().match({ user_id: getUser().id });
 
     return checkError(resp);
