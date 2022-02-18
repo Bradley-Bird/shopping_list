@@ -11,7 +11,7 @@ test('should return a li with the class of complete', (expect) => {
     // Call the function you're testing and set the result to a const
     const actual = renderItem({
         item: 'bread',
-        complete: true,
+        got: true,
     });
 
     //Expect
@@ -27,11 +27,10 @@ test('should return a li with no class', (expect) => {
     // Call the function you're testing and set the result to a const
     const actual = renderItem({
         item: 'bread',
-        complete: false,
+        got: false,
     });
 
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
 });
-
